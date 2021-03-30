@@ -12,6 +12,7 @@ public class TestNGExample {
 
 	@BeforeTest
 	public void setBaseURL() throws InterruptedException {
+		//Driver de Raul
 		System.setProperty("webdriver.chrome.driver", "/Users/raul/Documents/Accenture/Java - Ejercicios/chromedriver");
 		driver = new ChromeDriver();
 		driver.get("https://www.google.com");
