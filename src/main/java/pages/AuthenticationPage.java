@@ -44,7 +44,6 @@ public class AuthenticationPage {
 		emailTextBox.sendKeys(email);
 		passwordTextBox.sendKeys(password);
 		signInButton.click();
-
 		Thread.sleep(4000);
 
 	}

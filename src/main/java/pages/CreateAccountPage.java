@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -89,11 +90,50 @@ public class CreateAccountPage {
 
 	public void enterFirstName(String firstName) throws InterruptedException {
 		firstNameTextBox.sendKeys(firstName);
-		Thread.sleep(1000);
+		Thread.sleep(4000);
 	}
 
 	public void enterLastName(String lastName) throws InterruptedException {
 		lastNameTextBox.sendKeys(lastName);
-		Thread.sleep(1000);
+		Thread.sleep(4000);
+	}
+
+	public void enterPassword(String password) throws InterruptedException {
+		passwordTextBox.sendKeys(password);
+		Thread.sleep(4000);
+	}
+
+	public void enterAddress(String address1) throws InterruptedException {
+		addressTextBox.sendKeys(address1);
+		Thread.sleep(4000);
+	}
+
+	public void enterCity(String city) throws InterruptedException {
+		cityTextBox.sendKeys(city);
+		Thread.sleep(4000);
+	}
+
+	public void enterId_state(String id_state) throws InterruptedException {
+		stateDropdown.sendKeys("stateDropdown");
+		Thread.sleep(4000);
+	}
+
+	public void enterPostcode(String postcode) throws InterruptedException {
+		zipCodeTextBox.sendKeys(postcode);
+		Thread.sleep(4000);
+	}
+
+	public void enterId_country(String id_country) throws InterruptedException {
+		countryDropdown.sendKeys("countryDropdown");
+		Thread.sleep(4000);
+	}
+	public void enterPhone_mobile(String phone_mobile) throws InterruptedException {
+		mobilePhoneTextBox.sendKeys(phone_mobile);
+		Thread.sleep(4000);
+	}
+
+	public void clickRegisterButton() throws InterruptedException {
+		registerButton.click();
+		Thread.sleep(4000);
 	}
 }
