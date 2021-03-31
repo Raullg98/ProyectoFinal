@@ -6,7 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
+import java.util.UUID;
 import pages.AuthenticationPage;
 import pages.CreateAccountPage;
 import pages.MainPage;
@@ -40,18 +40,41 @@ public class PageFactoryTest {
 		mainPage.openSignInPage();
 
 		//Enter create account email
-		authPage.enterRegisterEmail("john@doe.com");
+		String email = UUID.randomUUID().toString() + "@example.com";
+		authPage.enterRegisterEmail(email);
 
 		//Click create an account button
 		authPage.clickCreateAnAccountButton();
 
 		//Enter create account email
-		createAccountPage.enterFirstName("Raul");
+		createAccountPage.enterFirstName("Myriam");
 
 		//Enter create account email
-		createAccountPage.enterLastName("Lara");
+		createAccountPage.enterLastName("Benavides");
 
+		//Enter create account email
+		createAccountPage.enterPassword("Pass123");
 
+		//Enter create account email
+		createAccountPage.enterAddress("Academy 2021");
+
+		//Enter create account email
+		createAccountPage.enterCity("Monterrey");
+
+		//Enter create account email
+		createAccountPage.enterId_state("5");
+
+		//Enter create account email
+		createAccountPage.enterPostcode("66220");
+
+		//Enter create account email
+		createAccountPage.enterId_country("2");
+
+		//Enter create account email
+		createAccountPage.enterPhone_mobile("8110316631");
+
+		//Click create an account button
+		createAccountPage.clickRegisterButton();
 
 	}
 
