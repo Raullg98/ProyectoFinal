@@ -24,6 +24,9 @@ public class MainPage {
 	@FindBy(xpath="//a[@class='login']")
 	WebElement signIn;
 
+	@FindBy(xpath="//button[@class='exclusive']")
+	WebElement addCart;
+
 	@FindBy(xpath="//a[@title='View my shopping cart']")
 	WebElement cart;
 
@@ -35,9 +38,10 @@ public class MainPage {
 
 	@FindBy(css = "p.alert")
 	WebElement alert;
-
-	//*[text()=' Newsletter : You have successfully subscribed to this newsletter.']
 	
+	@FindBy(xpath="//*[@title='Proceed to checkout']")
+	WebElement gotoCart;
+
 	public void searchClothes(String clothes) throws InterruptedException {
 		searchBox.sendKeys(clothes);
 		Thread.sleep(1000);
@@ -46,7 +50,7 @@ public class MainPage {
 	
 	public void goHome() throws InterruptedException {
 		logoImg.click();
-		Thread.sleep(1000);
+		Thread.sleep(5000);
 	}
 	
 	public void openSignInPage() throws InterruptedException {
@@ -54,6 +58,16 @@ public class MainPage {
 		Thread.sleep(1000);
 	}
 
+	public void AddCart() throws InterruptedException {
+		addCart.click();
+		Thread.sleep(2000);
+	}
+
+	public void Cart() throws InterruptedException {
+		gotoCart.click();
+		Thread.sleep(5000);
+  }
+    
 	public void openCartPage() throws InterruptedException {
 		cart.click();
 		Thread.sleep(1000);
@@ -67,4 +81,5 @@ public class MainPage {
 	public String getAlertMessage() {
 		return alert.getText();
 	}
+    
 }
