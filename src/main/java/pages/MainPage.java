@@ -23,6 +23,13 @@ public class MainPage {
 	
 	@FindBy(xpath="//a[@class='login']")
 	WebElement signIn;
+
+	@FindBy(xpath = "//a[@class='logout']")
+	WebElement signOut;
+
+	@FindBy(xpath = "//a[@class='account']")
+	WebElement userName;
+
 	
 	public void searchClothes(String clothes) throws InterruptedException {
 		searchBox.sendKeys(clothes);
@@ -39,4 +46,15 @@ public class MainPage {
 		signIn.click();
 		Thread.sleep(1000);
 	}
+ 
+	public void  SignOutInPage() throws InterruptedException{
+		signOut.click();
+		Thread.sleep(1000);
+	}
+
+	public void userName() throws InterruptedException{
+		userName.click();
+		Thread.sleep(1000);
+	}
+
 }
