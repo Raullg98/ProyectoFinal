@@ -17,6 +17,9 @@ public class MyAccountPage {
 	
 	@FindBy(xpath ="//*[@title='My wishlists']")
 	WebElement mywishlistButton;
+
+	@FindBy(xpath="//a[@title='Addresses']")
+	WebElement MyAddresess;
 	
 	public void openMyAccountPage() throws InterruptedException {
 		myaccountButton.click();
@@ -27,4 +30,9 @@ public class MyAccountPage {
 		mywishlistButton.click();
 		Thread.sleep(1000);
 	}
+
+	public void clickOnMyAddress() throws InterruptedException{
+        MyAddresess.click();
+        Thread.sleep(1000);
+    }
 }
