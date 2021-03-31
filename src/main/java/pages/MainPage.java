@@ -23,7 +23,13 @@ public class MainPage {
 	
 	@FindBy(xpath="//a[@class='login']")
 	WebElement signIn;
+
+	@FindBy(xpath="//button[@class='exclusive']")
+	WebElement addCart;
 	
+	@FindBy(xpath="//*[@title='Proceed to checkout']")
+	WebElement gotoCart;
+
 	public void searchClothes(String clothes) throws InterruptedException {
 		searchBox.sendKeys(clothes);
 		Thread.sleep(1000);
@@ -32,11 +38,21 @@ public class MainPage {
 	
 	public void goHome() throws InterruptedException {
 		logoImg.click();
-		Thread.sleep(1000);
+		Thread.sleep(5000);
 	}
 	
 	public void openSignInPage() throws InterruptedException {
 		signIn.click();
 		Thread.sleep(1000);
+	}
+
+	public void AddCart() throws InterruptedException {
+		addCart.click();
+		Thread.sleep(2000);
+	}
+
+	public void Cart() throws InterruptedException {
+		gotoCart.click();
+		Thread.sleep(5000);
 	}
 }
