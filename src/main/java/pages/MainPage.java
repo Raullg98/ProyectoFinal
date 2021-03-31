@@ -23,6 +23,20 @@ public class MainPage {
 	
 	@FindBy(xpath="//a[@class='login']")
 	WebElement signIn;
+
+	@FindBy(xpath="//a[@title='View my shopping cart']")
+	WebElement cart;
+
+	@FindBy(id="newsletter-input")
+	WebElement newsletterInput;
+
+	@FindBy(xpath ="//*[@name='submitNewsletter']")
+	WebElement submitNewsletterButton;
+
+	@FindBy(css = "p.alert")
+	WebElement alert;
+
+	//*[text()=' Newsletter : You have successfully subscribed to this newsletter.']
 	
 	public void searchClothes(String clothes) throws InterruptedException {
 		searchBox.sendKeys(clothes);
@@ -38,5 +52,19 @@ public class MainPage {
 	public void openSignInPage() throws InterruptedException {
 		signIn.click();
 		Thread.sleep(1000);
+	}
+
+	public void openCartPage() throws InterruptedException {
+		cart.click();
+		Thread.sleep(1000);
+	}
+
+	public void signUpForNewsletter(String email) {
+		newsletterInput.sendKeys(email);
+		submitNewsletterButton.click();
+	}
+
+	public String getAlertMessage() {
+		return alert.getText();
 	}
 }

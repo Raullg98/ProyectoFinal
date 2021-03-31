@@ -39,5 +39,14 @@ public class AuthenticationPage {
 		createAccountButton.click();
 		Thread.sleep(4000);
 	}
+
+	public void signIn(String email, String password) throws InterruptedException {
+		emailTextBox.sendKeys(email);
+		passwordTextBox.sendKeys(password);
+		signInButton.click();
+
+		Thread.sleep(4000);
+
+	}
 	
 }
