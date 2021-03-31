@@ -26,6 +26,18 @@ public class MainPage {
 
 	@FindBy(xpath="//button[@class='exclusive']")
 	WebElement addCart;
+
+	@FindBy(xpath="//a[@title='View my shopping cart']")
+	WebElement cart;
+
+	@FindBy(id="newsletter-input")
+	WebElement newsletterInput;
+
+	@FindBy(xpath ="//*[@name='submitNewsletter']")
+	WebElement submitNewsletterButton;
+
+	@FindBy(css = "p.alert")
+	WebElement alert;
 	
 	@FindBy(xpath="//*[@title='Proceed to checkout']")
 	WebElement gotoCart;
@@ -54,5 +66,20 @@ public class MainPage {
 	public void Cart() throws InterruptedException {
 		gotoCart.click();
 		Thread.sleep(5000);
+  }
+    
+	public void openCartPage() throws InterruptedException {
+		cart.click();
+		Thread.sleep(1000);
 	}
+
+	public void signUpForNewsletter(String email) {
+		newsletterInput.sendKeys(email);
+		submitNewsletterButton.click();
+	}
+
+	public String getAlertMessage() {
+		return alert.getText();
+	}
+    
 }
