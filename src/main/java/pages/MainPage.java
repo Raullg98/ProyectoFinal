@@ -48,6 +48,12 @@ public class MainPage {
 	@FindBy(xpath = "//a[@class='account']")
 	WebElement userName;
 
+    @FindBy(xpath= "//a[@class='product-name' and @href='http://automationpractice.com/index.php?id_product=4&controller=product' and @title='Printed Dress' and @itemprop='url']")
+	WebElement showPrintedDress;
+
+	@FindBy(xpath= "//a[@class='product-name' and @href='http://automationpractice.com/index.php?id_product=2&controller=product' and @title='Blouse' and @itemprop='url']")
+	WebElement showBlouse;
+
 	public void searchClothes(String clothes) throws InterruptedException {
 		searchBox.sendKeys(clothes);
 		Thread.sleep(1000);
@@ -96,6 +102,16 @@ public class MainPage {
 	public void userName() throws InterruptedException {
 		userName.click();
 		Thread.sleep(1000);
+	}
+
+    public void show() throws InterruptedException {
+		showPrintedDress.click();
+		Thread.sleep(5000);
+	}
+	public void show2() throws InterruptedException {
+		showBlouse.click();
+		Thread.sleep(5000);
+
 	}
 
 }
