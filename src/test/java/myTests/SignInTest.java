@@ -39,9 +39,7 @@ public class SignInTest {
 		assertEquals("Authentication failed", "http://automationpractice.com/index.php?controller=my-account", driver.getCurrentUrl().toString());
 		
 	}
-
-
-
+	
 	@AfterTest
 	public void endSession() {
 		driver.quit();
