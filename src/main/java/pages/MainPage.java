@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,6 +11,7 @@ public class MainPage {
 	
 	public MainPage(WebDriver driver) {
 		this.driver=driver;
+	
 	}
 	
 	@FindBy(id="search_query_top")
@@ -23,6 +25,7 @@ public class MainPage {
 	
 	@FindBy(xpath="//a[@class='login']")
 	WebElement signIn;
+
 	
 	public void searchClothes(String clothes) throws InterruptedException {
 		searchBox.sendKeys(clothes);
@@ -39,4 +42,5 @@ public class MainPage {
 		signIn.click();
 		Thread.sleep(1000);
 	}
+		
 }
