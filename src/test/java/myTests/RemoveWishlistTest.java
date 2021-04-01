@@ -1,32 +1,16 @@
 package myTests;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import pages.AuthenticationPage;
 import pages.MainPage;
 import pages.MyAccountPage;
 import pages.MyWishlistPage;
 
-public class RemoveWishlistTest {
+public class RemoveWishlistTest extends BaseTest {
 
-    WebDriver driver;
-
-	@BeforeTest
-	public void setBaseURL() throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver", "./src/resources/" + ( System.getProperty("os.name").toLowerCase().contains("mac") ? "chromedriver" : "chromedriver.exe" ));
-		driver = new ChromeDriver();
-		driver.get("http://automationpractice.com/index.php");
-		driver.manage().window().maximize();
-		Thread.sleep(3000);
-	}
-
-    @Test
-	public void signIn()  throws InterruptedException {
+    @Test (groups = { "regression", "remove_wishlist" })
+	public void removeWisthList()  throws InterruptedException {
 
 		MainPage mainPage = PageFactory.initElements(driver, MainPage.class);
 		AuthenticationPage authenticationPage = PageFactory.initElements(driver, AuthenticationPage.class);
@@ -49,11 +33,6 @@ public class RemoveWishlistTest {
 		driver.switchTo().alert().accept();
 		Thread.sleep(2000);
 		
-	}
-
-    @AfterTest
-	public void endSession() {
-		driver.quit();
 	}
     
 }

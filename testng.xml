@@ -1,9 +1,25 @@
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-  
-<suite name="Suite" verbose="1" >
-  <test name="Test" >
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Suite" verbose="1" parallel="none">
+  <test name="Test" parallel="none">
+    <groups>
+      <run>
+        <include name="regression"></include>
+      </run>
+    </groups>
     <classes>
-       <class name="myTests.CheckoutTest" />
+      <class name="myTests.ShowProducts" />
+      <class name="myTests.NewsletterTest" />
+      <class name="myTests.SignInTest" />
+      <class name="myTests.SignOutTest" />
+      <class name="myTests.SignUpTest" />
+      <class name="myTests.AddNewAddressTest" />
+      <class name="myTests.AddProductsTest" />
+      <class name="myTests.ProductOverviewTest" />
+      <class name="myTests.CreateWishlistTest" />
+      <class name="myTests.RemoveWishlistTest" />
+      <class name="myTests.CheckoutTest" />
+      
     </classes>
   </test>
 </suite>

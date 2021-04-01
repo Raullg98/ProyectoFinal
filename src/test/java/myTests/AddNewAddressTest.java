@@ -1,37 +1,16 @@
 package myTests;
 
-import static org.junit.Assert.assertEquals;
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import java.util.UUID;
-
 import pages.AuthenticationPage;
-import pages.CreateAccountPage;
 import pages.MainPage;
 import pages.MyAccountPage;
 import pages.MyAddressPage;
 import pages.YourAddressPage;
 
-public class AddNewAddressTest {
+public class AddNewAddressTest extends BaseTest {
     
-    WebDriver driver;
-
-	@BeforeTest
-	public void setBaseURL() throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver", "./src/resources/" + ( System.getProperty("os.name").toLowerCase().contains("mac") ? "chromedriver" : "chromedriver.exe" ));
-		driver = new ChromeDriver();
-		driver.get("http://automationpractice.com/index.php");
-		driver.manage().window().maximize();
-		Thread.sleep(3000);
-	}
-
-    
-    @Test
+    @Test (groups = { "regression", "add_new_address" })
     public void  AddNewAddress()  throws InterruptedException {
         MainPage mainPage = PageFactory.initElements(driver, MainPage.class);
         AuthenticationPage authenticationPage = PageFactory.initElements(driver, AuthenticationPage.class);
@@ -68,8 +47,4 @@ public class AddNewAddressTest {
 
     }
 
-    @AfterTest
-	public void endSession() {
-		driver.quit();
-	}
 }

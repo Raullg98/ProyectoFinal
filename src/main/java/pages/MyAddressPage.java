@@ -4,8 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import net.bytebuddy.implementation.bytecode.Throw;
-
 public class MyAddressPage {
 
     final WebDriver driver;

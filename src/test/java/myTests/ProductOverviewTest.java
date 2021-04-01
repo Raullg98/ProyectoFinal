@@ -1,33 +1,14 @@
 package myTests;
 
-import static org.junit.Assert.assertEquals;
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.AuthenticationPage;
-import pages.CreateAccountPage;
 import pages.MainPage;
 import pages.PO;
 
-public class ProductOverview {
+public class ProductOverviewTest extends BaseTest {
 
-	WebDriver driver;
-
-	@BeforeTest
-	public void setBaseURL() throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver", "./src/resources/" + ( System.getProperty("os.name").toLowerCase().contains("mac") ? "chromedriver" : "chromedriver.exe" ));
-		driver = new ChromeDriver();
-		driver.get("http://automationpractice.com/index.php");
-		driver.manage().window().maximize();
-		Thread.sleep(3000);
-	}
-
-
-	@Test
+	@Test (groups = { "regression", "product_overview" })
 	public void productOverview()  throws InterruptedException {
 
 		MainPage mainPage = PageFactory.initElements(driver, MainPage.class);
@@ -48,12 +29,6 @@ public class ProductOverview {
 		op.sendComment();
 		op.confirmComment();
 	
-	}
-
-	
-	@AfterTest
-	public void endSession() {
-		driver.quit();
 	}
 	
 }

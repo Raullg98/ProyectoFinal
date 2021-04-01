@@ -12,12 +12,12 @@ public class SearchPage {
 		this.driver=driver;
 	}
 	
-	@FindBy(xpath="//*[@class='product_img_link' and @href='http://automationpractice.com/index.php?id_product=2&controller=product&search_query=Blouse&results=1']")
+	@FindBy(xpath="//*[@class='product-name' and @href='http://automationpractice.com/index.php?id_product=2&controller=product&search_query=Blouse&results=1']")
 	WebElement SelectProduct;
 
 	public void openProduct() throws InterruptedException {
 		SelectProduct.click();
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 	}
 
 }
